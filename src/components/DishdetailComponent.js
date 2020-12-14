@@ -3,19 +3,24 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 const DishDetail = (props) => {
     const dish = props.dish;
-    if (dish != null)
-    return (
-        <div className="container">
-            <div className="row">
-                <div className="col-12 col-md-5 m-1">
-                    <RenderDish dish={props.dish}/>
-                </div>
-                <div className="col-12 col-md-5 m-1">
-                    <renderComments comments={dish.comments} />
+    if (dish != null) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-5 m-1">
+                        <RenderDish dish={dish}/>
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        <RenderComments comments={dish.comments} />
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        );
+    } else {
+        return (
+            <div></div>
+        )
+    }
 };
 
 function RenderDish({dish}) {
@@ -31,7 +36,7 @@ function RenderDish({dish}) {
 };
 
 
-function renderComments({comments}){
+function RenderComments({comments}) {
     if(comments) {
         comments = comments.map((commentData) => {
             return (
