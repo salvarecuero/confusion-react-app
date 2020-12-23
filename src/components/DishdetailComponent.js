@@ -2,11 +2,29 @@ import React, { Component } from 'react';
 import { Row, Col, Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Modal, ModalHeader, ModalBody, Label, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Loading } from './LoadingComponent';
 
 const DishDetail = (props) => {
     const dish = props.dish;
     const comments = props.comments;
-    if (dish != null) {
+
+    if(props.isLoading) {
+        return(
+            <div className="container">
+                <div className="row">
+                    <Loading />
+                </div>
+            </div>
+        )
+    }else if (props.errMess) {
+        return(
+            <div className="container">
+                <div className="row">
+                    <h4>{props.errMess}</h4>
+                </div>
+            </div>
+        )
+    }else if (dish != null) {
         return (
             <div className="container">
                 <Row>
@@ -120,20 +138,20 @@ class CommentForm extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="rating" md={3}>Rating</Label>
                                 <Col md={3}>
-                                        <Control.select defaultValue="1" model=".rating" name="rating" className="form-control">
+                                        <Control.Select defaultValue="1" model=".rating" name="rating" className="form-control">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
                                             <option>4</option>
                                             <option>5</option>
-                                        </Control.select>
+                                        </Control.Select>
                                 </Col>
                             </Row>
 
                             <Row className="form-group">
                                 <Label htmlFor="author" md={3}>Author</Label>
                                 <Col md={9}>
-                                    <Control.text model=".author" name="author"
+                                    <Control.Text model=".author" name="author"
                                         className="form-control"
                                         placeholder="Insert your name here!"
                                         validators={{
@@ -155,7 +173,7 @@ class CommentForm extends Component {
                             <Row className="form-group">
                                 <Label htmlfor="comment" md={3}>Comment</Label>
                                 <Col md={9}>
-                                    <Control.textarea model=".comment" id="comment" name="comment"
+                                    <Control.Textarea model=".comment" id="comment" name="comment"
                                         rows="6"
                                         className="form-control" />
                                 </Col>

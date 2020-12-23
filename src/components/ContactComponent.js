@@ -71,7 +71,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlfor="firstName" md={2}>First Name</Label>
                                 <Col md={10}>
-                                    <Control.text model=".firstname" id="firstName" name="firstName"
+                                    <Control.Text model=".firstname" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         className="form-control"
                                         validators={{
@@ -90,7 +90,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlfor="lastName" md={2}>Last Name</Label>
                                 <Col md={10}>
-                                    <Control.text model=".lastname" id="lastName" name="lastName"
+                                    <Control.Text model=".lastname" id="lastName" name="lastName"
                                         placeholder="Last Name"
                                         className="form-control"
                                         validators={{
@@ -111,7 +111,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlfor="telNum" md={2}>Contact Tel.</Label>
                                 <Col md={10}>
-                                    <Control.text model=".telnum" id="telNum" name="telNum"
+                                    <Control.Text model=".telnum" id="telNum" name="telNum"
                                         placeholder="Tel. Number"
                                         className="form-control"
                                         validators={{
@@ -133,7 +133,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlfor="email" md={2}>Email</Label>
                                 <Col md={10}>
-                                    <Control.text model=".email" id="email" name="email"
+                                    <Control.Text model=".email" id="email" name="email"
                                         placeholder="Email"
                                         className="form-control"
                                         validators={{
@@ -153,23 +153,23 @@ class Contact extends Component {
                                 <Col md={{size: 6, offset: 2}}>
                                     <div className="form-check">
                                         <Label check>
-                                            <Control.checkbox model=".agree" name="agree"
+                                            <Control.Checkbox model=".agree" name="agree"
                                                 className="form-check-input" /> {' '}
                                                 <strong>May we contact you?</strong>
                                         </Label>
                                     </div>
                                 </Col>
                                 <Col md={{size: 3, offset: 1}}>
-                                    <Control.select model=".contactType" name="contactType" className="form-control">
+                                    <Control.Select model=".contactType" name="contactType" className="form-control">
                                             <option>Tel.</option>
                                             <option>Email</option>
-                                    </Control.select>
+                                    </Control.Select>
                                 </Col>
                             </Row>
                             <Row className="form-group">
                                 <Label htmlfor="message" md={2}>Your feedback</Label>
                                 <Col md={10}>
-                                    <Control.textarea model=".message" id="message" name="message"
+                                    <Control.Textarea model=".message" id="message" name="message"
                                         rows="12"
                                         className="form-control" />
                                 </Col>
