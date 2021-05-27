@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Also, this project fetch a heroku server URL. It wasn't ideally proposed (I made this following a course) so the server was made in another repo. It was "just" a json-server, that will serve the images and the db.json. In order to "make it work" as your will, you need to create a server that serves the json/image files.
+This was my first React App, made following along a educational course, so It doesn't have much of my "personal touch".
 
 ## Available Scripts
 
